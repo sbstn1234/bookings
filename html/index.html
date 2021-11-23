@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    
+    <title>Goethe-Jazz</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+    <style>
+        body { font-family: "sans-serif"; }
+        hr {
+                border: 1px dotted #ccc;}
+        .header img {
+                float: left;
+                width: 70px;
+                height: 70px;
+                padding-left: 0.3em;
+                background: #ffffff;
+                }
+        .header h1 {
+                position: relative;
+                font-size: 47px;
+                top: 13px;
+                left: 10px;
+                } 
+        @media screen and (max-width: 375px) {
+            .header h1 {
+                position: relative;
+                font-size: 38px;
+                top: 13px;
+                left: 10px;
+                } 
+        }             
+        input, select { border-radius: 1px;
+                        border: 2px solid grey;
+                        box-sizing: border-box;
+                        font-size: 1em;
+                        font-family: "sans-serif";
+                        width: 100%;
+                        padding: 7px;}
+        img#flyer_46 {
+            max-width: 350px; 
+                    height: auto; 
+                    float: right;
+                    margin-right: 1em;
+                    border: olive;
+                    border-radius: 25px;
+                    background: #ffffff;}
+        @media screen and (max-width: 1050px) {
+            img#flyer_46 {
+                display: none; }
+        }
+        #names {
+            font-size: 1em;
+            padding-top: 1em;
+            padding-bottom: 0.3em;}
+        .name {
+            padding-bottom: 1.3em;
+        }
+        .mail {
+            padding-bottom: 0.6em;
+        }
+        table#dates th { text-align: left;
+                    font-size: 1.2em; 
+                    padding: 10px;
+                    border-bottom: 1px solid silver;}
+        @media screen and (max-width: 400px) {
+            .Tag {
+                display: none;}
+        }
+        table#dates td, table#dates th {  padding: 1em 2em 0.3em 0; 
+                                            font-size: 1.1em;
+                                            margin: 2;}
+        @media screen and (max-width: 375px) {
+            table#dates td, table#dates th {  padding: 1em 1.1em 0.3em 0; 
+                                            font-size: 1em;
+                                            margin: 2;}
+        }                                   
+        input[type=number] { width: 3.5em; 
+                            height: 1.85em;}
+        #submitButton { padding-left: 2em;
+                        margin-top: 1em;
+                        transition-duration: 0.4s;
+                        background-color: white;
+                        border: 2px solid gold;
+                        border-radius: 5px;
+                        color: black;
+                        padding: 15px 32px;
+                        margin-bottom: 2em;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;}
+        #submitButton:hover {   background-color: gold;
+                                border: 2px solid gold;
+                                color: black;
+                                padding: 15px 32px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;}
+        #footer {   background-color: #F1F1F1;
+                    text-align: center;
+                    padding: 10px;
+                    border-radius: 6px;} 
+    </style>
+</head> 
+<body> 
+    <div class="header">
+        <img src="images/goethe.jpg" alt="[logo]" />
+        <h1>Goethe-Jazz</h1>
+      </div>
+    <div>
+    <br style="clear: both;" />
+    </div>
+    <div id="info1">
+        <p>Herzlich willkommen bei der Jazz-AG am Goethe-Gymnasium Wilmersdorf!</p>
+        <p>Hier können Sie Tickets für die anstehenden Jazz-Nights vorbestellen.</p>
+    </div>
+        <hr>
+</div>
+<h3>Bitte geben Sie ihre persönlichen Daten an</h3>
+
+
+<form action="https://sheetdb.io/api/v1/w23g9a7ojvgxa" method="POST" id="sheetdb-form">
+    <div id="names">
+        <div class="name">
+            Vorname: <input name="data[name]" placeholder="Max Mustermann">
+        </div>
+        <div class="mail">
+            E-Mail: <input name="data[email]" placeholder="maxmuster@gmail.com">
+        </div>
+        <img id="flyer_46"src="images/flyer_46.jazznight.jpg" alt="[flyer_46]">
+    </div>
+    <hr>
+    <div style="overflow-x:auto;">
+        <h3>Wann möchten Sie die Jazz-Night besuchen?</h3>
+        <table id="dates">
+            <tr>
+                <th>Datum</th>
+                <th class="Tag">Tag</th>
+                <th>Erwachsene</th>
+                <th>Ermäßigt</th>
+            </tr>
+            <tr>
+                <td>11.11.2021</td>
+                <td class="Tag">Donnerstag</td>
+                <td><input type="number" name="data[erw1]" placeholder="0"></td>
+                <td><input type="number" name="data[erm1]" placeholder="0"></td>
+            </tr>
+            <tr>
+                <td>12.11.2021</td>
+                <td class="Tag">Freitag</td>
+                <td><input type="number" name="data[erw2]" placeholder="0"></td>
+                <td><input type="number" name="data[erm2]" placeholder="0"></td>
+            </tr>
+            <tr>
+                <td>13.11.2021</td>
+                <td class="Tag">Samstag</td>
+                <td><input type="number" name="data[erw3]" placeholder="0"></td>
+                <td><input type="number" name="data[erm3]" placeholder="0"></td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div class= "Buttons">
+            <button id="submitButton"style="padding: 7px 14px;"type="submit">Bestätigen</button>
+    </div>
+  <script>
+    var form = document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+          //email code
+        alert('Vielen Dank für Ihre Vorbestellung!')
+      });
+    });
+  </script>
+        <h3>Wichtige Informationen zur Jazz-Night:</h3>
+      </div>
+      <div id="info2">
+            <p>Als Ermäßigt gelten alle Personen bis zur Vollendung des 18. Lebensjahres.</p>
+            <p>Die Karten werden an dem gewünschten Tag in
+                gewünschter Menge an der Abendkasse für Sie bereit liegen.Bitte holen Sie diese bis
+                30 Minuten vor Konzertbeginn ab, da sie andernfalls wieder der Abendkasse zur
+                Verfügung gestellt werden.</p>
+            <p> Sollte absehbar sein, dass Sie reservierte Karten nicht benötigen, bitten wir wegen der
+                begrenzten Kapazität um schnelle Rückmeldung.</p>
+            <p>Alle drei Jazznight-Abende werden als 2G Veranstaltung durchgeführt.</p>
+            <p>- Bitte für die Einlasskontrolle einen Nachweis (geimpft oder genesen)
+                mitbringen!</p>
+            <p>- Im Schulgebäude gilt grundsätzlich die Pflicht zum Tragen eines Mund-
+                /Nasenschutzes. Am Sitzplatz kann dieser während des Konzertes abgenommen
+                werden.</p>
+            <p>- Da es für unter 12-jährige Kinder bisher keine Impfempfehlung gibt, gilt für
+                diese jüngeren Konzertbesucher*innen die 3G-Regel.</p>
+            <h4> Wir freuen uns auf Sie!</h4>
+      </div>
+      <div>
+          <footer id="footer">
+            <p>Goethe-Jazz</p>
+            <a href="https://www.goethe-jazz.de/datenschutzerklaerung/">Datenschutzerklärung</a>
+            <p><a href="mailto:tickets@goethe-jazz.de">Bei Fragen wenden Sie sich bitte an uns!</a></p>
+          </footer>
+      </div>
+
+
+  </form>
+</body>

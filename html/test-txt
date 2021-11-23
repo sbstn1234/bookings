@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jazz-Night Ticketbuchung</title>
+
+</head> 
+<body>
+    <!--<img class="" id="goethe" src="images/cropped-logo_goethe-jazz-1.jpg" alt="picture not availabe"> --> 
+    <h1>Tickets für die Jazz-Night</h1>
+    <p>Hier können Sie Ticktes für die Jazz-Night buchen</p>
+</body>
+
+</html>
+
+<style>
+        img {
+            width: 65px;
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+    </style>
+
+    width="65" height="65"
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tickets für Jazz-Night</title>
+    
+</head> 
+<body>
+
+<header>
+    <img src="images/goethe.jpg" alt="pic not available[Goethe]">
+    <style>
+        img {
+            width: 65px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+    </style>
+    
+    <h1>Goethe-Jazz</h1>
+<header>
+
+    <h3>Hier können Sie Ticktes für die Jazz-Night buchen</h3>
+
+    <div class="elem-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="visitor_name" placeholder="Max Mustermann" pattern=[A-Z\sa-z]{3,20} required>
+    </div>
+    <div class="elem-group">
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="visitor_email" placeholder="max@mustermann.de" required>
+    </div>
+    <hr>
+    <div class="elem-group inlined">
+        <p>Bitte wählen Sie die Anzahl der Tickets:</p>
+      <label for="adults">Erwachsen</label>
+      <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+    </div>
+    <div class="elem-group inlined">
+      <label for="children">Ermäßigt</label>
+      <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
+    </div>
+    <div class="elem-group inlined">
+        <p>Bitte wählen Sie den Tag der Jazz-Night</p>
+      <label for="date"></label>
+      <input type="date" id="concert-date" name="checkin" required>
+    </div>
+    <button type="submit">Bestätigen</button>
+
+    <hr>
+    <h3>Wichtige Informationen zur Jazz-Night:</h3>
+    <p>Die Jazz-Night findet als 2G Veranstaltung statt. Bitte bringen Sie entsprechende Nachweise mit, diese werden beim Einlass kontrolliert.</p>
+    <p>Durch die reduzierte Besucheranzahl diesmal an 3 Abenden. (11.11, 12.11, 13.11 2021)</p>
+    <p>Falls Sie Ihre Tickets spontan nicht mehr benötigen, oder weitere Fragen haben, senden sie bitte eine E-Mail an tickets@goethe-jazz.de</p>
+  </form>
+  <script src="communcation.js"></script>
+</body>
+
+
+
+
+
+
+
+
+//new code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tickets für Jazz-Night</title>
+    
+</head> 
+<body>
+    <img id="goethe"src="images/goethe.jpg" alt="pic not available[Goethe]">
+    <style>
+        img {
+            width: 65px;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+    </style>
+    
+    <h1>Goethe-Jazz</h1>
+
+    <h3>Bitte geben Sie ihren Namen und Ihre Email an:</h3>
+
+    <form action="https://sheetdb.io/api/v1/w23g9a7ojvgxa" method="POST" id="sheetdb-form">
+        <div>
+            Name: <input name="data[Name]">
+        </div>
+            Email: <input name="data[Email]">
+        <div>
+            <hr>
+            <h3>Bitte wählen Sie die Anzahl der Tickets:</h3>
+            Erw.  : <input type="number" name="data[Erw.]">
+        </div>
+            Erm.  : <input type="number" name="data[Ermäßigt]">
+        <div>
+            <hr>
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+      
+      <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+              //email code
+            alert('Vielen Dank für Ihre Vorbestellung!')
+          });
+        });
+      </script>
+
+    <hr>
+    <h3>Wichtige Informationen zur Jazz-Night:</h3>
+    <p>Die Jazz-Night findet als 2G Veranstaltung statt. Bitte bringen Sie entsprechende Nachweise mit, diese werden beim Einlass kontrolliert.</p>
+    <p>Durch die reduzierte Besucheranzahl diesmal an 3 Abenden. (11.11, 12.11, 13.11 2021)</p>
+    <p>Falls Sie Ihre Tickets spontan nicht mehr benötigen, oder weitere Fragen haben, senden Sie bitte eine E-Mail an tickets@goethe-jazz.de</p>
+  </form>
+  
+</body>
+
+
+
+
+Datum des Konzerts: <input name="data[Date]" placeholder="dd.mm.yyyy">
+
+
+
+
+
+   <div></div>
+            Erw</div>achsen: <input type="number" name="data[Erw.:]" placeholder="0">
+        </div></div>
+        <div></div>
+            Erm</div>äßigt: <input type="number" name="data[Ermäßigt:]" placeholder="0">
+        </div></div>
+        <div></div>
+            Dat</div>um des Konzerts: <input name="data[Tag:]" placeholder="dd.mm.yyyy">
+        </div></div>
+        <hr siz</div>e="1" noshade>
+        <div></div>
+            <bu</div>tton type="submit">Bestätigen</button>
+        </div></div>
+      </form></div>
+      </div>
+
+
+
+      img_ {
+        width: 65px;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+
+
+    #resetButton {  padding-left: 2em;
+        margin-top: 1em;
+        transition-duration: 0.4s;
+        background-color: white;
+        border: 2px solid gold;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;}
+#resetButton:hover {
+            background-color: gold;
+            border: 2px solid gold;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;}
+
+
+            <button id="resetButton"type="reset">Zurücksetzen</button>
+
+
+
+            <img id="goethe"src="images/goethe.jpg" alt="pic not available[Goethe]">
+            <div id="goetheHeader">
+                <h1>Goethe-Jazz</h1>
+            </div>
+
+            <div class="header">
+                <h1>Goethe-Jazz</h1>
+                <img id="goethe"src="images/goethe.jpg" alt="pic not available[Goethe]">
+              </div>
+
+
+
+
+              .header-img {
+                width: 100%;
+                height: 90px;
+                background-size: auto;
+                text-align: left;
+                background: #1abc9c;
+                color: white;
+                font-size: 20px;
+                }
+
+
+                div class="header-img">
+        <img id="goethe"src="images/goethe.jpg" alt="pic not available[Goethe]">
+        <h1>Goethe-Jazz</h1>
+      </div>
+
+
+      box-shadow: 3px 4px 5px rgb(0 0 0 / 50%);
+
+      <div class="header">
+        <img src="images/goethe.jpg" alt="[logo]" />
+        <h1>Goethe-Jazz</h1>
+      </div>
+
+      .header img {
+        float: left;
+        width: 70px;
+        height: 70px;
+        background: #ffffff;
+        }
+.header h1 {
+        position: relative;
+        font-size: 47px;
+        top: 13px;
+        left: 10px;
+        }
